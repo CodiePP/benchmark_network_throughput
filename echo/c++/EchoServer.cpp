@@ -1,3 +1,8 @@
+/*  Copyright (2016) by Alexander Diemand
+ *  MIT license; see file "LICENSE"
+ */
+
+// the original code was copied from:
 //
 // async_tcp_echo_server.cpp
 // ~~~~~~~~~~~~~~~~~~~~~~~~~

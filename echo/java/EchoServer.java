@@ -1,3 +1,8 @@
+/*  Copyright (2016) by Alexander Diemand
+ *  MIT license; see file "LICENSE"
+ */
+
+// the original code has been copied from echo server example
 import java.net.Socket;
 import java.net.ServerSocket;
 import java.io.*;

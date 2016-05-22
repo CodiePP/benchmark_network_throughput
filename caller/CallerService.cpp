@@ -1,3 +1,6 @@
+/*  Copyright (2016) by Alexander Diemand
+ *  MIT License; see file "LICENSE"
+ */
 
 #include <cstdlib>
 #include <cstring>
@@ -12,7 +15,6 @@
 #include <algorithm>
 
 using boost::asio::ip::tcp;
-//typedef boost::chrono::high_resolution_clock clk;
 using clk = boost::chrono::high_resolution_clock;
 
 class Caller
@@ -29,6 +31,7 @@ class Caller
             throw "too many repetitions!"; }
 
         run();
+
     } // ctor
 
     private:
@@ -41,6 +44,9 @@ class Caller
         tcp::resolver resolver(io_service_);
         tcp::resolver::iterator endpoint_it = resolver.resolve({ _host, _port });
 
+        clk::time_point _talpha, _tomega;
+        _talpha = clk::now();
+
         boost::system::error_code error;
         tcp::socket _socket(io_service_);
         boost::asio::connect(_socket, endpoint_it, error);
@@ -49,7 +55,7 @@ class Caller
             return; }
 
         clk::time_point _t0, _t1;
-        clk::time_point _t2, _t3;
+        //clk::time_point _t2, _t3;
 
         long nrep = _nrep;
 
@@ -87,6 +93,9 @@ class Caller
         } // while
 
         _socket.close();
+
+        _tomega = clk::now();
+        std::clog << boost::format("overall time used: %ld us (10^-6 seconds)\n") % (boost::chrono::round<boost::chrono::microseconds>(_tomega - _talpha).count());
 
         std::sort(_tm_array.begin(), _tm_array.begin()+_nrep);
 
