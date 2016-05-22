@@ -7,9 +7,10 @@ enable_testing()
 
 project (EchoServer)
 
-set(CMAKE_JAVA_COMPILE_FLAGS "-source" "1.7" "-target" "1.7")
+set(CMAKE_JAVA_COMPILE_FLAGS "-source" "1.8" "-target" "1.8")
 
-add_jar(EchoServer EchoServer.java)
+add_jar(EchoServer EchoServer.java
+    MANIFEST manifest)
 
 get_target_property(_jarFile EchoServer JAR_FILE)
 get_target_property(_classDir EchoServer CLASSDIR)
