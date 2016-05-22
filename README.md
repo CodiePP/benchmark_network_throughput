@@ -14,5 +14,5 @@ This shows nicely in the box the expected time for a quarter, half, three quarte
 total measurements. Additionally, atop are drawn the outliers which take
 excessively long to return.
 
-[!demo01.png]
+![benchmark where Java beats C++](demo01.png)
 
