@@ -31,5 +31,5 @@ set paxis 6 range [ * : * ] noreverse nowriteback
 set paxis 7 range [ * : * ] noreverse nowriteback
 x = 0.0
 ## Last datafile plotted: "silver.dat"
-plot 'localhost_10000.csv' using (1.0):2, '' using (2.0):3
+plot 'localhost_1000.csv' using (1.0):2, '' using (2.0):3
 

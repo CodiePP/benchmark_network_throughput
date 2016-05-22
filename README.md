@@ -23,14 +23,14 @@ excessively long to return.
 
 > java -jar ./echo/java/EchoServer.jar &
 
-> ./caller/CallerServer_Release_1_0 localhost 24937 0 10000
- after 10000 repetitions: 18 < 26 < 349 us (10^-6 seconds)
- after 10000 repetitions: min: 18 q1[2500]: 24 median[5000]: 25 q3[7500]: 27 max: 349 us (10^-6 seconds)
+> ./caller/CallerServer_Release_1_0 localhost 11234 0 1000
+  after 1000 repetitions: 29 < 38 < 217 us (10^-6 seconds)
+  after 1000 repetitions: min: 29 q1[250]: 32 median[500]: 39 q3[750]: 41 max: 217 us (10^-6 seconds)
 
-> ./caller/CallerServer_Release_1_0 localhost 11234 0 10000
- after 10000 repetitions: 18 < 25 < 197 us (10^-6 seconds)
- after 10000 repetitions: min: 18 q1[2500]: 19 median[5000]: 21 q3[7500]: 31 max: 197 us (10^-6 seconds)
+> ./caller/CallerServer_Release_1_0 localhost 24937 0 1000
+  after 1000 repetitions: 29 < 39 < 449 us (10^-6 seconds)
+  after 1000 repetitions: min: 28 q1[250]: 31 median[500]: 39 q3[750]: 43 max: 449 us (10^-6 seconds)
 
 ```
-![benchmark](demo02.png)
+![benchmark almost identical](demo02.png)
 
